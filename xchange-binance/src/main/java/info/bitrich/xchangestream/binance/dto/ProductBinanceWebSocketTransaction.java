@@ -12,7 +12,7 @@ public class ProductBinanceWebSocketTransaction extends BaseBinanceWebSocketTran
             @JsonProperty("E") String eventTime,
             @JsonProperty("s") String symbol) {
         super(eventType, eventTime);
-        currencyPair = new CurrencyPair(symbol.substring(0, 3), symbol.substring(3, 6));
+        currencyPair = new CurrencyPair(symbol.substring(0, 3), symbol.substring(3));
     }
 
     public CurrencyPair getCurrencyPair() {
