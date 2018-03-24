@@ -47,7 +47,6 @@ public class WebSocketClientHandler extends SimpleChannelInboundHandler<Object> 
     public void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
         Channel ch = ctx.channel();
         if (!handshaker.isHandshakeComplete()) {
-            handshaker.finishHandshake(ch, (FullHttpResponse) msg);
             try {
                 handshaker.finishHandshake(ch, (FullHttpResponse) msg);
                 LOG.info("WebSocket Client connected!");
